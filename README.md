@@ -121,3 +121,7 @@ sh test_anisoAnoise_stage4.sh
       year={2023}
     }
 
+## 📧 Contact
+
+If you have any question, please email `zjbinxia@gmail.com`.
+
