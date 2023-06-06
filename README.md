@@ -23,7 +23,7 @@ We use DF2K, which combines [DIV2K](https://data.vision.ee.ethz.ch/cvl/DIV2K/) (
 
 ---
 
-## Training (4 V100 GPUs)
+## Training
 
 1. train Meta-Learning Network (MLN) bicubic pretraining 
 
