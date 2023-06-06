@@ -25,18 +25,32 @@ We use DF2K, which combines [DIV2K](https://data.vision.ee.ethz.ch/cvl/DIV2K/) (
 
 ## Training (4 V100 GPUs)
 
-### Isotropic Gaussian Kernels
-
-1. We train KDSRT-M ( using L1 loss)
+1. train Meta-Learning Network (MLN) bicubic pretraining 
 
 ```bash
-sh main_iso_KDSRsMx4_stage3.sh 
+sh main_stage1.sh
 ```
 
-2. we train KDSRS-M (using L1 loss and KD loss). **It is notable that modify the ''pre_train_TA'' and ''pre_train_ST'' of main_iso_KDSRsMx4_stage4.sh  to the path of trained KDSRT-M checkpoint.** Then, we run
+### Isotropic Gaussian Kernels
+
+
+2. we train MLN using meta-learning scheme. **It is notable that modify the ''pre_train'' of main_stage2.sh  to the path of trained main_stage1 checkpoint.** Then, we run
 
 ```bash
-sh main_iso_KDSRsMx4_stage4.sh 
+sh main_stage2.sh
+```
+
+3. we train MLN with teacher MRDA_T together. **It is notable that modify the ''pre_train_meta'' of main_stage3.sh  to the path of trained main_stage2 checkpoint.** Then, we run
+
+```bash
+sh main_stage3.sh
+```
+
+
+4. we train student MRDA_S. **It is notable that modify the ''pre_train_meta'' of main_stage3.sh  to the path of trained main_stage2 checkpoint. ''pre_train_TA'' and ''pre_train_ST'' are both set to the path of trained main_stage3 checkpoint..** Then, we run
+
+```bash
+sh main_stage4.sh
 ```
 
 ### Anisotropic Gaussian Kernels plus noise
@@ -57,7 +71,7 @@ sh main_anisonoise_KDSRsMx4_stage4.sh
 
 ## :european_castle: Model Zoo
 
-Please download checkpoints from [Google Drive](https://drive.google.com/drive/folders/113NBvfcrCedvend96KqDiRYVy3N8yprl).
+Please download checkpoints from [Google Drive].
 
 ---
 
@@ -65,19 +79,14 @@ Please download checkpoints from [Google Drive](https://drive.google.com/drive/f
 
 ### Isotropic Gaussian Kernels
 
-Test KDSRsM
 ```bash
-sh test_iso_KDSRsMx4.sh
+sh test_iso_stage4.sh
 ```
-Test KDSRsL
 
-```bash
-sh test_iso_KDSRsLx4.sh
-```
 ### Anisotropic Gaussian Kernels plus noise
 
 ```bash
-sh test_anisonoise_KDSRsMx4.sh
+sh test_anisoAnoise_stage4.sh
 ```
 
 ---
