@@ -99,10 +99,10 @@ sh test_anisonoise_KDSRsMx4.sh
 
 ## BibTeX
 
-@article{xia2022meta,
-  title={Meta-learning based degradation representation for blind super-resolution},
-  author={Xia, Bin and Tian, Yapeng and Zhang, Yulun and Hang, Yucheng and Yang, Wenming and Liao, Qingmin},
-  journal={IEEE Transactions on Image Processing},
-  year={2023}
-}
+    @article{xia2022meta,
+      title={Meta-learning based degradation representation for blind super-resolution},
+      author={Xia, Bin and Tian, Yapeng and Zhang, Yulun and Hang, Yucheng and Yang, Wenming and Liao, Qingmin},
+      journal={IEEE Transactions on Image Processing},
+      year={2023}
+    }
 
