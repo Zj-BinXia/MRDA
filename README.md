@@ -10,7 +10,7 @@ This project is the official implementation of 'Meta-Learning based Degradation 
 This is code for MRDA (for classic degradation model, ie y=kx+n)
 
 <p align="center">
-  <img src="figs/process.jpg" width="50%">
+  <img src="figs/process.jpg" width="80%">
 </p>
 
 ---
