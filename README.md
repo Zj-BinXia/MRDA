@@ -55,16 +55,25 @@ sh main_stage4.sh
 
 ### Anisotropic Gaussian Kernels plus noise
 
-1. We train KDSRT ( using L1 loss)
+It's training process is the same as isotropic Gaussian Kernels, except we use the anisotropic Gaussian Kernels settings in main_stage2.sh, main_stage3.sh, and main_stage4.sh .
+
+2. we train MLN using meta-learning scheme. **It is notable that modify the ''pre_train'' of main_stage2.sh  to the path of trained main_stage1 checkpoint.** Then, we run
 
 ```bash
-sh main_anisonoise_KDSRsMx4_stage3.sh
+sh main_stage2.sh
 ```
 
-2. we train KDSRS (using L1 loss and KD loss). **It is notable that modify the ''pre_train_TA'' and ''pre_train_ST'' of main_anisonoise_KDSRsMx4_stage4.sh  to the path of trained KDSRT checkpoint.** Then, we run
+3. we train MLN with teacher MRDA_T together. **It is notable that modify the ''pre_train_meta'' of main_stage3.sh  to the path of trained main_stage2 checkpoint.** Then, we run
 
 ```bash
-sh main_anisonoise_KDSRsMx4_stage4.sh
+sh main_stage3.sh
+```
+
+
+4. we train student MRDA_S. **It is notable that modify the ''pre_train_meta'' of main_stage3.sh  to the path of trained main_stage2 checkpoint. ''pre_train_TA'' and ''pre_train_ST'' are both set to the path of trained main_stage3 checkpoint..** Then, we run
+
+```bash
+sh main_stage4.sh
 ```
 
 ---
