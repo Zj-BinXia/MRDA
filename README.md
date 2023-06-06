@@ -84,11 +84,11 @@ sh test_anisonoise_KDSRsMx4.sh
 
 ## Results
 <p align="center">
-  <img src="images/iso-quan.jpg" width="90%">
+  <img src="figs/iso-quan.jpg" width="90%">
 </p>
 
 <p align="center">
-  <img src="images/aniso-quan.jpg" width="90%">
+  <img src="figs/aniso-quan.jpg" width="90%">
 </p>
 
 
