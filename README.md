@@ -80,7 +80,7 @@ sh main_stage4.sh
 
 ## :european_castle: Model Zoo
 
-Please download checkpoints from [Google Drive].
+Please download checkpoints from [Google Drive](https://drive.google.com/drive/folders/1gB-q3k_e_XeZbvOFXMNlS4aHDkpDqMtU?usp=sharing).
 
 ---
 
